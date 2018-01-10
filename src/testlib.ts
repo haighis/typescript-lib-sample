@@ -1,11 +1,11 @@
+/// <reference path="../node_modules/@types/toastr/index" />
+
 // Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
   // import "core-js/fn/array.find"
   // ...
-// export default class DummyClass {
-  
-// }
 //export namespace App {
-    export default class Logger implements ILogger {
+//export namespace Util {    
+export class Logger implements ILogger {
     private writer: any;
 
     constructor (public mode: number = LoggerMode.Console) {
@@ -16,25 +16,27 @@
             case LoggerMode.Alert:
                 this.writer = (msg: string) => alert(msg);
                 break;
-            // case LoggerMode.Toastr:
-            //     this.writer = (msg: string) => toastr.info(msg);
-            //     break;
+            case LoggerMode.Toastr:
+                this.writer = (msg: string) => toastr.info(msg);
+                break;
         }
     }
+
     write(msg: string) {
         this.writer(msg);
     };
-    }
+}
 
-    export var LoggerMode = {
+export var LoggerMode = {
     Console: 1,
     Alert: 2,
     Toastr: 3
-    }
+}
 
-    export interface ILogger {
+export interface ILogger {
     write: (msg: string) => void;
-    }
+}
+//}    
 //}
 
 // namespace App {
