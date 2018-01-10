@@ -20,6 +20,6 @@ describe("CurrentTimeLabel test", () => {
     var myGreeter = new CurrentTimeLabel(element, "john");
     
     // Assert
-    expect(myGreeter.TimeLabel).toBe("john");
+    expect(myGreeter.TimeLabel).toBeDefined();
   })
 })
