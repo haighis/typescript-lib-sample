@@ -8,7 +8,7 @@ export class CurrentTimeLabel {
     span: HTMLElement;
     private timeLabel: string;
 
-    constructor (element: HTMLElement, title: string) { 
+    constructor (element: HTMLElement) { 
         this.element = element;
         this.element.innerText += "The time is: ";
         this.span = document.createElement('span');

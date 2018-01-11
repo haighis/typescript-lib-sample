@@ -9,15 +9,15 @@ describe("CurrentTimeLabel test", () => {
   
   it("CurrentTimeLabel is instantiable", () => {
     var element = document.createElement("test");
-    expect(new CurrentTimeLabel(element,"test")).toBeInstanceOf(CurrentTimeLabel);
+    expect(new CurrentTimeLabel(element)).toBeInstanceOf(CurrentTimeLabel);
   })
   // given when then
-  it("given_TimeLable_when_Created_thenShouldBeValid", () => {
+  it("given_TimeLable_when_Created_thenShouldBeDefined", () => {
     // Arrange
     var element = document.createElement("testElement");
     
     // Act
-    var myGreeter = new CurrentTimeLabel(element, "john");
+    var myGreeter = new CurrentTimeLabel(element);
     
     // Assert
     expect(myGreeter.TimeLabel).toBeDefined();

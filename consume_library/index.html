@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Sample Page - Consume Library</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js">
+        </script>
+        <script type="text/javascript" src="libs/CurrentTimeLabel.js">
+        </script>
+    </head>
+    <body>
+        <h1>Current Time Label</h1>
+        <p id="test">My Sample Element</p>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            var elementToAttachTo = document.getElementById("test");
+            var objLabel = new CurrentTimeLabel(elementToAttachTo,"test");
+        });
+        </script>
+    </body>
+</html>
